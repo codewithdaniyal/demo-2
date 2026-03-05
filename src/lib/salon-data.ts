@@ -1,14 +1,60 @@
-export const salonConfig = {
-  name: "Glamour Studio",
-  tagline: "Where Elegance Meets Tradition",
-  phone: "+92 300 1234567",
-  whatsapp: "923001234567",
-  email: "hello@glamourstudio.pk",
-  address: "F-7 Markaz, Jinnah Super, Islamabad",
-  googleMapsLink: "https://maps.google.com",
-  instagram: "@glamourstudio.pk",
-  hours: "Mon–Sat: 10:00 AM – 8:00 PM | Sun: 12:00 PM – 6:00 PM",
+export interface SalonConfig {
+  slug: string;
+  name: string;
+  tagline: string;
+  phone: string;
+  whatsapp: string;
+  email: string;
+  address: string;
+  googleMapsLink: string;
+  instagram: string;
+  hours: string;
+  primaryColor?: string;
+}
+
+export const salons: Record<string, SalonConfig> = {
+  "glamour-studio": {
+    slug: "glamour-studio",
+    name: "Glamour Studio",
+    tagline: "Where Elegance Meets Tradition",
+    phone: "+92 300 1234567",
+    whatsapp: "923001234567",
+    email: "hello@glamourstudio.pk",
+    address: "F-7 Markaz, Jinnah Super, Islamabad",
+    googleMapsLink: "https://maps.google.com",
+    instagram: "@glamourstudio.pk",
+    hours: "Mon–Sat: 10:00 AM – 8:00 PM | Sun: 12:00 PM – 6:00 PM",
+    primaryColor: "#D4903A", // Champagne Gold
+  },
+  "rose-beauty": {
+    slug: "rose-beauty",
+    name: "Rose Beauty & Spa",
+    tagline: "Luxury Pink Haven for the Modern Woman",
+    phone: "+92 321 9876543",
+    whatsapp: "923219876543",
+    email: "info@rosebeauty.pk",
+    address: "DHA Phase 5, Lahore",
+    googleMapsLink: "https://maps.google.com",
+    instagram: "@rosebeauty.lahore",
+    hours: "Daily: 10:00 AM – 9:00 PM",
+    primaryColor: "#E05270", // Rose Pink
+  },
+  "golden-touch": {
+    slug: "golden-touch",
+    name: "Golden Touch Salon",
+    tagline: "Unleash Your Inner Glow",
+    phone: "+92 333 5556667",
+    whatsapp: "923335556667",
+    email: "contact@goldentouch.pk",
+    address: "Clifton Block 4, Karachi",
+    googleMapsLink: "https://maps.google.com",
+    instagram: "@goldentouch.khi",
+    hours: "Tue–Sun: 11:00 AM – 8:00 PM | Mon: Closed",
+    primaryColor: "#1A7A5E", // Emerald/Gold vibe
+  },
 };
+
+export const salonConfig = salons["glamour-studio"];
 
 export interface ServiceCategory {
   id: string;
