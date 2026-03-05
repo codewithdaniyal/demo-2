@@ -1,0 +1,133 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400;1,500;1,600&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,500&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 43 60% 97%;
+    --foreground: 35 40% 8%;
+
+    --card: 40 50% 96%;
+    --card-foreground: 35 40% 8%;
+
+    --popover: 43 60% 97%;
+    --popover-foreground: 35 40% 8%;
+
+    --primary: 34 62% 53%;
+    --primary-foreground: 43 60% 97%;
+
+    --secondary: 350 50% 65%;
+    --secondary-foreground: 43 60% 97%;
+
+    --muted: 38 30% 90%;
+    --muted-foreground: 35 15% 45%;
+
+    --accent: 15 72% 53%;
+    --accent-foreground: 43 60% 97%;
+
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 38 25% 85%;
+    --input: 38 25% 85%;
+    --ring: 34 62% 53%;
+
+    --radius: 0.75rem;
+
+    --sidebar-background: 40 50% 96%;
+    --sidebar-foreground: 35 40% 8%;
+    --sidebar-primary: 34 62% 53%;
+    --sidebar-primary-foreground: 43 60% 97%;
+    --sidebar-accent: 38 30% 90%;
+    --sidebar-accent-foreground: 35 40% 8%;
+    --sidebar-border: 38 25% 85%;
+    --sidebar-ring: 34 62% 53%;
+
+    /* Custom salon tokens */
+    --champagne: 34 62% 53%;
+    --champagne-light: 38 60% 88%;
+    --rose-gold: 350 60% 67%;
+    --rose-gold-light: 350 80% 92%;
+    --terracotta: 15 72% 53%;
+    --cream: 43 60% 97%;
+    --ink: 35 40% 8%;
+    --emerald: 160 65% 30%;
+
+    --gradient-gold: linear-gradient(135deg, hsl(34 62% 53%), hsl(38 70% 68%));
+    --gradient-rose: linear-gradient(135deg, hsl(350 60% 67%), hsl(350 80% 80%));
+    --shadow-gold: 0 8px 32px -8px hsl(34 62% 53% / 0.3);
+    --shadow-soft: 0 4px 24px -4px hsl(35 40% 8% / 0.08);
+  }
+
+  .dark {
+    --background: 30 20% 6%;
+    --foreground: 38 40% 92%;
+
+    --card: 30 18% 10%;
+    --card-foreground: 38 40% 92%;
+
+    --popover: 30 20% 6%;
+    --popover-foreground: 38 40% 92%;
+
+    --primary: 34 55% 48%;
+    --primary-foreground: 38 40% 92%;
+
+    --secondary: 350 45% 55%;
+    --secondary-foreground: 38 40% 92%;
+
+    --muted: 30 15% 15%;
+    --muted-foreground: 38 20% 55%;
+
+    --accent: 15 65% 48%;
+    --accent-foreground: 38 40% 92%;
+
+    --destructive: 0 63% 31%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 30 15% 18%;
+    --input: 30 15% 18%;
+    --ring: 34 55% 48%;
+
+    --sidebar-background: 30 18% 10%;
+    --sidebar-foreground: 38 40% 92%;
+    --sidebar-primary: 34 55% 48%;
+    --sidebar-primary-foreground: 38 40% 92%;
+    --sidebar-accent: 30 15% 15%;
+    --sidebar-accent-foreground: 38 40% 92%;
+    --sidebar-border: 30 15% 18%;
+    --sidebar-ring: 34 55% 48%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground font-body antialiased;
+  }
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-display;
+  }
+}
+
+@layer utilities {
+  .text-gradient-gold {
+    @apply bg-clip-text text-transparent;
+    background-image: linear-gradient(135deg, hsl(34 62% 53%), hsl(38 70% 68%));
+  }
+  .bg-gradient-gold {
+    background-image: linear-gradient(135deg, hsl(34 62% 53%), hsl(38 70% 68%));
+  }
+  .bg-gradient-rose {
+    background-image: linear-gradient(135deg, hsl(350 60% 67%), hsl(350 80% 80%));
+  }
+  .shadow-gold {
+    box-shadow: 0 8px 32px -8px hsl(34 62% 53% / 0.3);
+  }
+  .font-tagline {
+    font-family: 'Cormorant Garamond', serif;
+  }
+}
