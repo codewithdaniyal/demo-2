@@ -15,7 +15,7 @@ export interface SalonConfig {
 export const salons: Record<string, SalonConfig> = {
   "glamour-studio": {
     slug: "glamour-studio",
-    name: "Glamour Studio",
+    name: "Glamour",
     tagline: "Where Elegance Meets Tradition",
     phone: "+92 300 1234567",
     whatsapp: "923001234567",
@@ -28,7 +28,7 @@ export const salons: Record<string, SalonConfig> = {
   },
   "rose-beauty": {
     slug: "rose-beauty",
-    name: "Rose Beauty & Spa",
+    name: "Rose Beauty",
     tagline: "Luxury Pink Haven for the Modern Woman",
     phone: "+92 321 9876543",
     whatsapp: "923219876543",
@@ -41,7 +41,7 @@ export const salons: Record<string, SalonConfig> = {
   },
   "golden-touch": {
     slug: "golden-touch",
-    name: "Golden Touch Salon",
+    name: "Golden Touch",
     tagline: "Unleash Your Inner Glow",
     phone: "+92 333 5556667",
     whatsapp: "923335556667",

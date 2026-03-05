@@ -14,15 +14,32 @@ export const SalonProvider: React.FC<{ children: React.ReactNode }> = ({ childre
         const params = new URLSearchParams(window.location.search);
         const salonSlug = params.get("salon");
 
+        // 1. Start with base config from slug or default
+        let baseConfig = salons["glamour-studio"];
         if (salonSlug && salons[salonSlug]) {
-            setConfig(salons[salonSlug]);
+            baseConfig = salons[salonSlug];
+        }
 
-            // Update primary color if specified in config
-            if (salons[salonSlug].primaryColor) {
-                document.documentElement.style.setProperty('--primary', salons[salonSlug].primaryColor);
-                // Also update the gradient/other color variables if necessary
-                // For simplicity, we just update --primary for now
-            }
+        // 2. Allow specific overrides via URL parameters
+        const nameOverride = params.get("name");
+        const taglineOverride = params.get("tagline");
+        const colorOverride = params.get("color");
+
+        const finalConfig = {
+            ...baseConfig,
+            name: nameOverride || baseConfig.name,
+            tagline: taglineOverride || baseConfig.tagline,
+            primaryColor: colorOverride ? `#${colorOverride.replace('#', '')}` : baseConfig.primaryColor,
+        };
+
+        setConfig(finalConfig);
+
+        // 3. Update document title dynamically
+        document.title = `${finalConfig.name} — ${finalConfig.tagline}`;
+
+        // 4. Update primary color CSS variable
+        if (finalConfig.primaryColor) {
+            document.documentElement.style.setProperty('--primary', finalConfig.primaryColor);
         }
     }, []);
 
